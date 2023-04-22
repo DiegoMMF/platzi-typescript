@@ -32,7 +32,7 @@ class Picture {
 }
 
 class Album {
-    public id: number;
+    public id: number;  // public actúa por defecto, esté o no esté
     public title: string;
     public pictures: Picture[];
 
