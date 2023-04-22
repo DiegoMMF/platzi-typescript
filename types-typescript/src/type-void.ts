@@ -26,7 +26,7 @@ unusable = undefined;
 
 // Tipo: Never
 
-function handleError(code: number, message: string): never{
+function handleErrors(code: number, message: string): never{
 
     // Process your code here
     // Generate a message
@@ -34,7 +34,7 @@ function handleError(code: number, message: string): never{
 }
 
 try {
-    handleError(404, 'Not Found');
+    handleErrors(404, 'Not Found');
 } catch (error) {
 }
 

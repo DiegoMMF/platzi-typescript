@@ -1,4 +1,4 @@
-export {};
+export { }; // Evita conflictos 
 
 enum PhotoOrientation {
     Landscape,
@@ -13,9 +13,11 @@ class Picture {
     public title: string;
     public orientation: PhotoOrientation;
 
-    public constructor(id: number, 
-                title: string, 
-                orientation: PhotoOrientation) {
+    public constructor(
+        id: number,
+        title: string,
+        orientation: PhotoOrientation
+    ) {
         this.id = id;
         this.title = title;
         this.orientation = orientation;
@@ -46,7 +48,11 @@ class Album {
 }
 
 const album: Album = new Album(1, 'Personal Pictures');
-const picture: Picture = new Picture(1, 'Platzi session', PhotoOrientation.Square);
+const picture: Picture = new Picture(
+    1, 
+    'Platzi session', 
+    PhotoOrientation.Square
+);
 album.addPicture(picture);
 console.log('album', album);
 
