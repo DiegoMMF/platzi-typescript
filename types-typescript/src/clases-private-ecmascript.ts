@@ -11,6 +11,8 @@ enum PhotoOrientation {
 
 class Picture {
     // Propiedades
+    // al usar "#" por sobre "private", encapsulamos aún mejor, 
+    // porque en un console.log, no aparecen los campos "#"
     #id: number;
     #title: string;
     #orientation: PhotoOrientation;
@@ -28,6 +30,14 @@ class Picture {
         return `[id: ${this.#id}, 
                  title: ${this.#title}, 
                  orientation: ${this.#orientation}]`;
+    }
+
+    get id() {
+        return this.#id;
+    }
+
+    set id(id: number) {
+        this.#id = id;
     }
 }
 
