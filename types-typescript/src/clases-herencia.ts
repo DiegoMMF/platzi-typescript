@@ -8,6 +8,8 @@ enum PhotoOrientation {
 }
 // SUPERclase
 abstract class Item {
+    // protected permite la reutilización de atributos por parte de subclases
+    // private, no: sólo en el ámbito de la clase presente...
     protected readonly _id: number;
     protected _title: string;
 
