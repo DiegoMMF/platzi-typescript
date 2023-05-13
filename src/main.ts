@@ -1,52 +1,45 @@
-console.log('Hola TypeScript con Platzi');
-
-// Number
-// Explicito
-let phone: number;
-phone = 1;
+let phone: number;          // number explicito
 phone = 54234567;
-// phone = 'hola'; // Error
+phone = 'hola';
 
-// Inferido
-let phoneNumber = 54234567;
-phoneNumber = 123;
-// phoneNumber = true; // Error por tipo
+let phoneNumber = 54234567; // number inferido
+phone = 1;
+phoneNumber = true;         // error en tiempo de compilación
 
-let hex: number = 0xf00d;
-let binary: number = 0b1010;
-let octal: number = 0o744;
+let otherId;                // any INFERIDO: let sin asignación de valor
+otherId = 1;
+otherId = '1';
+otherId = true;
 
-// Tipo: Boolean
-// Tipado Explicito
-let isPro: boolean;
-isPro = true;
-// isPro = 1;
+let idUser: any;            // any explícito
+idUser = 1; // number
+idUser = '1'; // string
 
-// Inferido
-let isUserPro = false;
+let isPro: boolean;         // boolean 
+let isUserPro = false;      // Inferido
 isUserPro = true;
-// isUserPro = 10; // Error!
+isUserPro = 10;             // error en tiempo de compilación
+isPro = true;
+isPro = 1;                  // error en tiempo de compilación
 
-// Strings
-let username: string = 'luixaviles';
+let username: string = 'Diego';
 username = "Luis";
-// username = true; // Error: tipo string
+username = true;            // error en tiempo de compilación
 
-// Template String
-// Uso de back-tick `
-let userInfo: string;
-userInfo = `
+let userInfo = `
     User Info:
     username: ${username}
-    firstName: ${username + ' Aviles'}
+    firstName: ${username + ' Maldini'}
     phone: ${phone}
     isPro: ${isPro}
 `;
-console.log('userInfo', userInfo);
 
+let surprise: any = 'hello typescript';
+// surprise.sayHello();     // error en tiempo de EJECUCIÓN por ser any
+const subcadena = surprise.substring(6);
+console.log('subcadena', subcadena);
 
-
-
-
-
-
+// * Números hexadecimales, binarios y octales
+let hex: number = 0xf00d;
+let binary: number = 0b1010;
+let octal: number = 0o744;
