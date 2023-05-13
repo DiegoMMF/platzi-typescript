@@ -5,7 +5,7 @@ enum PhotoOrientation {
     Landscape,
     Portrait,
     Square,
-    Panorama
+    Panorama,
 }
 
 interface Picture {
@@ -40,7 +40,12 @@ interface PictureConfig {
     orientation?: PhotoOrientation
 }
 
-function generatePicture(config: PictureConfig) {
+/* interface PictureResponse {
+    title?: string;
+    date?: string;
+} */
+
+function generatePicture(config: PictureConfig)/* : PictureResponse */ {
     const pic = {title: 'Default', date: '2020-03'};
     if(config.title) {
         pic.title = config.title;
@@ -70,6 +75,6 @@ let user: User;
 user = {id: 10, username: 'luixaviles', isPro: true};
 console.log('user', user);
 user.username = 'paparazzi';
-// user.id = 20; //Error!
+user.id = 20; //Error!
 console.log('user', user);
 
