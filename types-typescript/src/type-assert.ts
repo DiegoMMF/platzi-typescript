@@ -1,14 +1,24 @@
 export {};
+
 // <tipo> // Angle Bracket syntax
 let username: any;
 username = 'luixaviles';
 username = 'luis';
 
-// tenemos una cadena, TS confia en mi!
-let message: string = (<string>username).length > 5 ?
-                      `Welcome ${username}`:
-                      'Username is too short';
-console.log('message', message); 
+// dado que yo sé que username es string, podría escribir:
+let messageFromAny: string = username.length > 5 
+    ? `Welcome ${username}`
+    : 'Username is too short';
+
+    console.log('messageFromAny', messageFromAny);
+
+// pero si quiero el autocompletado de VSCode para cadenas, ingreso:
+// let message: string = (<string>username).length > 5
+let message: string = (username as string).length > 5
+    ? `Welcome ${username}`
+    : 'Username is too short';
+
+    console.log('message', message); 
 
 let usernameWithId: any = 'luixaviles 1';
 // Como obtener el username?
