@@ -1,4 +1,4 @@
-export { }; // Evita conflictos 
+export {}; // Evita conflictos 
 
 enum PhotoOrientation {
     Landscape,
@@ -9,12 +9,12 @@ enum PhotoOrientation {
 
 class Picture {
     // Propiedades
-    public id: number;
+    public id: Date;
     public title: string;
     public orientation: PhotoOrientation;
 
     public constructor(
-        id: number,
+        id: Date,
         title: string,
         orientation: PhotoOrientation
     ) {
@@ -32,11 +32,11 @@ class Picture {
 }
 
 class Album {
-    public id: number;  // public actúa por defecto, esté o no esté
+    public id: Date;  // TS asigna public actúa por defecto
     public title: string;
     public pictures: Picture[];
 
-    public constructor(id: number, title: string) {
+    public constructor(id: Date, title: string) {
         this.id = id;
         this.title = title;
         this.pictures = [];
@@ -47,9 +47,11 @@ class Album {
     }
 }
 
-const album: Album = new Album(1, 'Personal Pictures');
+const dateAsId = new Date();
+console.log('dateAsId', dateAsId)
+const album: Album = new Album(dateAsId, 'Personal Pictures');
 const picture: Picture = new Picture(
-    1, 
+    new Date(), 
     'Platzi session', 
     PhotoOrientation.Square
 );
@@ -57,7 +59,7 @@ album.addPicture(picture);
 console.log('album', album);
 
 // Accediendo a los miembros publicos
-picture.id = 100; // public
+picture.id = new Date(); // public
 picture.title = 'Another title'; // public
 album.title = 'Personal Activities';
 console.log('album', album);
