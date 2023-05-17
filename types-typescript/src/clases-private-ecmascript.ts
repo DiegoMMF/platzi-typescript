@@ -1,4 +1,4 @@
-export {};
+export { };
 
 // TypeScript 3.8
 
@@ -17,9 +17,11 @@ class Picture {
     #title: string;
     #orientation: PhotoOrientation;
 
-    public constructor(id: number, 
-                title: string, 
-                orientation: PhotoOrientation) {
+    public constructor(
+        id: number,
+        title: string,
+        orientation: PhotoOrientation,
+    ) {
         this.#id = id;
         this.#title = title;
         this.#orientation = orientation;
@@ -63,7 +65,8 @@ album.addPicture(picture);
 console.log('album', album);
 
 // Accediendo a los miembros publicos
-// picture.id = 100; // private
-// picture.title = 'Another title'; // private
-// album.title = 'Personal Activities'; //private
+picture.id = 100; // private
+picture.title = 'Another title'; // private
+album.title = 'Personal Activities'; //private
+console.log('picture', picture)
 console.log('album', album);

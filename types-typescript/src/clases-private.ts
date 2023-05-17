@@ -51,7 +51,7 @@ album.addPicture(picture);
 console.log('album', album);
 
 // Accediendo a los miembros publicos
-// picture.id = 100; // private
-// picture.title = 'Another title'; // private
-// album.title = 'Personal Activities'; //private
+picture.id = 100; // private
+picture.title = 'Another title'; // private
+album.title = 'Personal Activities'; //private
 console.log('album', album);
