@@ -17,7 +17,7 @@ export class User {
     removeAlbum(album: Album): Album | undefined {
         // Buscar Album
         const index = this.album.findIndex(a => a.id === album.id);
-        let deletedAlbum;
+        let deletedAlbum: Album;
         if(index >= 0) {
             deletedAlbum = this.album[index];
             this.album.splice(index, 1);
